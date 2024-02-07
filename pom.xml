@@ -32,7 +32,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.example.SortTask</mainClass>
+                            <mainClass>test.project.SortTask</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

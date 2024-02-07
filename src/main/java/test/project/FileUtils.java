@@ -1,24 +1,16 @@
-package org.example;
+package test.project;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SortTask {
-    public static void main(String[] args) {
-        List<String> rows = readFile("in.txt");
-        if (rows != null) {
-            String[][] table = TableUtils.createTable(rows);
-            writeTableToFile("out.txt", TableUtils.sort(table));
-        }
-    }
-
-    private static List<String> readFile(String fileName) {
+public class FileUtils {
+    public static List<String> readFile(String fileName) {
         File file = new File(fileName);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)))) {
             ArrayList<String> rows = new ArrayList<>();
             String str = reader.readLine();
             while (str != null) {
-                System.out.println(str);
                 rows.add(str);
                 str = reader.readLine();
             }
@@ -32,7 +24,7 @@ public class SortTask {
         }
     }
 
-    private static void writeTableToFile(String fileName, String[][] table) {
+    public static void writeTableToFile(String fileName, String[][] table) {
         File file = new File(fileName);
         PrintStream console = System.out;
         try {

@@ -1,4 +1,4 @@
-package org.example;
+package test.project;
 
 import java.util.List;
 
@@ -24,24 +24,21 @@ public class TableUtils {
     }
 
     private static int compareCells(String s1, String s2) {
-        if (s1 == null && s2 == null) {
-            return 0;
-        }
         if (s1 == null) {
-            return -1;
+            s1 = "";
         }
         if (s2 == null) {
-            return 1;
+            s2 = "";
         }
         try {
             Double d1 = Double.parseDouble(s1);
             try {
                 Double d2 = Double.parseDouble(s2);
                 return d1.compareTo(d2);
-            } catch (NumberFormatException d2FormatException) {
+            } catch (NumberFormatException exception) {
                 return -1;
             }
-        } catch (NumberFormatException d1FormatException) {
+        } catch (NumberFormatException exception) {
             try {
                 Double.parseDouble(s2);
                 return 1;
