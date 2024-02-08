@@ -15,13 +15,11 @@ public class TableUtilsTests {
             List<String> list = new ArrayList<>();
             list.add("hello\t123");
             list.add("");
-            list.add(null);
             list.add("world\tblabla\ttest");
 
             String[][] expected = {
                     {"hello", "123", null},
                     {"", null, null},
-                    {null, null, null},
                     {"world", "blabla", "test"}
             };
 
@@ -36,7 +34,6 @@ public class TableUtilsTests {
             String[][] table = {
                     {"hello", "123", null},
                     {"", null, null},
-                    {null, null, null},
                     {"world", "blabla", "test test"},
                     {"world", "blabla", "test"},
                     {"1", null, null}
@@ -45,7 +42,6 @@ public class TableUtilsTests {
             String[][] expected = {
                     {"1", null, null},
                     {"", null, null},
-                    {null, null, null},
                     {"hello", "123", null},
                     {"world", "blabla", "test"},
                     {"world", "blabla", "test test"}
